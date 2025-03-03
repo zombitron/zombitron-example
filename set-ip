@@ -1,0 +1,12 @@
+#! /usr/bin/env node
+var data = require('./setup.json');
+var fs = require('fs');
+data.server_ip = process.argv[2];
+if(process.argv[3]){
+    data.server_port = parseInt(process.argv[3]);
+} else {
+    data.server_port = 3000;
+}
+data.osc = null;
+console.log(JSON.stringify(data));
+fs.writeFile('setup.json', JSON.stringify(data), function(e){});
