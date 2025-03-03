@@ -1,0 +1,3 @@
+[submodule "zombitron"]
+	path = zombitron
+	url = git@github.com:zombitron/zombitron.git
