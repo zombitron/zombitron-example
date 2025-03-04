@@ -6,7 +6,7 @@
 ## SETUP SERVER
 then : on cmd
 ```
-git clone –recursive https://github.com/zombitron/zombitron-example.git 
+git clone -–recursive https://github.com/zombitron/zombitron-example.git 
 cd zombitron-example
 zombitron-example > npm install
 ```
