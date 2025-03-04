@@ -1,30 +1,50 @@
-git clone zombitron-example
-
+## Previous requirements
+- installing node js ( on cmd try ```node -v``` to check if installed)
+- installing openssl ( on cmd try ```openssl``` to check if installed)
+- installing git ( on cmd try ```git``` to check if installed)
 
 ## SETUP SERVER
-1. Edit ``setup.json`` with your ip and port
-
-To know your IP : in the terminal > ifconfig
-
-If you need secure environemet: 
+then : on cmd
 ```
-https: true
+git clone –recursive https://github.com/zombitron/zombitron-example.git 
+cd zombitron-example
+zombitron-example > npm install
 ```
-And you will need to generate a certificate: 
+at this stage, if you want to run on a local server, connect to local network
 
-Generating certificate: 
+then get your local ip :
+
 ```
-mkdir zombitron/server/certs 
-openssl genrsa -out zombitron/server/certs/server.key 2048
-````
+> ifconfig
+```
 
-Installing dependencies: 
-npm install
+```
+zombitron-example > node set-ip [YOUR-LOCAL-IP]
+```
+### Secure Context
+if you want to run on a secure context (which you want if you need IMU sensors and use not super old phones)
+```
+zombitron-example > node set-https true
+```
 
-run:  node index.js
+create a certificate
+```
+zombitron-example > mkdir zombitron/server/certs
+zombitron-example > openssl genrsa -out zombitron/server/certs/server.key 2048
+openssl req -new -x509 -sha256 -key  zombitron/server/certs/server.key -out  zombitron/server/certs/server.crt -days 365 -subj /CN=[YOUR-LOCAL-IP]
+```
+
+Then you can run 
+```
+zombitron-example > node index.js
+```
 
 
 ## ON SMARTPHONE OR TABLET 
-Go to http ( or https)//[--YOUR_IP--]:[--YOUR PORT--]/
+Go to http (or https)//[--YOUR_IP--]:[--YOUR PORT--]/
 
-On IOS < 13 co to certificate to install and verify it
+## IOS < 13 
+On IOS < 13 you need to install the certificate 
+Go to https://[YOUR-LOCAL-IP]:[port]/certificate
+Accept 
+Then settings > general > install certificate
