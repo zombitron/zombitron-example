@@ -1,7 +1,12 @@
 ## Previous requirements
-- installing node js ( on cmd try ```node -v``` to check if installed)
-- installing openssl ( on cmd try ```openssl``` to check if installed)
 - installing git ( on cmd try ```git``` to check if installed)
+    On mac OS > [installer](https://sourceforge.net/projects/git-osx-installer/)
+    Other alternatives such as homebrew see [git website](https://git-scm.com/downloads/mac)
+
+- installing node js ( on cmd try ```node -v``` to check if installed)
+    [Node js](https://nodejs.org/en/download)
+
+- installing openssl ( on cmd try ```openssl``` to check if installed)
 
 ## SETUP SERVER
 then : on cmd
