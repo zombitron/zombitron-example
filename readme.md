@@ -33,9 +33,9 @@ npm -v # Should print "10.9.2".
 ## SETUP SERVER
 then : on cmd
 ```
-git clone -–recursive https://github.com/zombitron/zombitron-example.git 
-cd zombitron-example
-zombitron-example > npm install
+git clone -–recursive https://github.com/clararigaud/zombitron-turner.git 
+cd zombitron-turner
+zombitron-turner > npm install
 ```
 at this stage, if you want to run on a local server, connect to local network
 
@@ -46,24 +46,24 @@ then get your local ip :
 ```
 
 ```
-zombitron-example > node set-ip [YOUR-LOCAL-IP]
+zombitron-turner > node set-ip [YOUR-LOCAL-IP]
 ```
 ### Secure Context
 if you want to run on a secure context (which you want if you need IMU sensors and use not super old phones)
 ```
-zombitron-example > node set-https true
+zombitron-turner > node set-https true
 ```
 
 create a certificate
 ```
-zombitron-example > mkdir zombitron/server/certs
-zombitron-example > openssl genrsa -out zombitron/server/certs/server.key 2048
+zombitron-turner > mkdir zombitron/server/certs
+zombitron-turner > openssl genrsa -out zombitron/server/certs/server.key 2048
 openssl req -new -x509 -sha256 -key  zombitron/server/certs/server.key -out  zombitron/server/certs/server.crt -days 365 -subj /CN=[YOUR-LOCAL-IP]
 ```
 
 Then you can run 
 ```
-zombitron-example > node index.js
+zombitron-turner > node index.js
 ```
 
 
