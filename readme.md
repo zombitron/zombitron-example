@@ -18,11 +18,11 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
 \. "$HOME/.nvm/nvm.sh"
 
 # Download and install Node.js:
-nvm install 22
+nvm install 16
 
 # Verify the Node.js version:
-node -v # Should print "v22.14.0".
-nvm current # Should print "v22.14.0".
+node -v 
+nvm current 
 
 # Verify npm version:
 npm -v # Should print "10.9.2".
@@ -38,10 +38,7 @@ zombitron-turner > npm install
 at this stage, if you want to run on a local server, connect to local network
 
 then get your local ip :
-
-```
-> ifconfig
-```
+by hitting the option key while clicking on the wifi logo on the top right of the screen
 
 ```
 zombitron-turner > node set-ip [YOUR-LOCAL-IP]
@@ -52,18 +49,25 @@ if you want to run on a secure context (which you want if you need IMU sensors a
 zombitron-turner > node set-https true
 ```
 
-create a certificate
+Create a certificate
 ```
 zombitron-turner > mkdir zombitron/server/certs
 zombitron-turner > openssl genrsa -out zombitron/server/certs/server.key 2048
 openssl req -new -x509 -sha256 -key  zombitron/server/certs/server.key -out  zombitron/server/certs/server.crt -days 365 -subj /CN=[YOUR-LOCAL-IP]
 ```
 
+### Enabling OSC  (optionnal)
+```
+node set-osc [yourip] [theOSCport]
+```
+
+### Start stop the Zombitron
 Then you can run 
 ```
 zombitron-turner > node index.js
 ```
-
+to start 
+and ``` cmd + c ``` to stop 
 
 ## ON SMARTPHONE OR TABLET 
 Go to http (or https)//[--YOUR_IP--]:[--YOUR PORT--]/
