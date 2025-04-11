@@ -1,9 +1,10 @@
 ## Previous requirements
 ### install git 
 ( on cmd try ```git``` to check if installed)
-
 Download homebrew > [link](https://brew.sh/)
 Might get some time to install
+
+```brew install git```
 
 ### install node.js 
 ( on cmd try ```node -v``` to check if installed)
