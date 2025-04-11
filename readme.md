@@ -31,7 +31,7 @@ npm -v # Should print "10.9.2".
 ## SETUP SERVER
 then : on cmd
 ```
-git clone -–recursive https://github.com/clararigaud/zombitron-turner.git 
+git clone --recursive https://github.com/clararigaud/zombitron-turner.git 
 cd zombitron-turner
 zombitron-turner > npm install
 ```
