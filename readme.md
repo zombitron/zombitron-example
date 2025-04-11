@@ -1,12 +1,12 @@
 ## Previous requirements
-### install git 
+### 1. install git 
 ( on cmd try ```git``` to check if installed)
 Download homebrew > [link](https://brew.sh/)
 Might get some time to install
 
 ```brew install git```
 
-### install node.js 
+### 2. install node.js 
 ( on cmd try ```node -v``` to check if installed)
 [Node js](https://nodejs.org/en/download)
 
@@ -27,8 +27,6 @@ nvm current # Should print "v22.14.0".
 # Verify npm version:
 npm -v # Should print "10.9.2".
 ```
-### install openssl
-(on cmd try ```openssl``` to check if installed)
 
 ## SETUP SERVER
 then : on cmd
