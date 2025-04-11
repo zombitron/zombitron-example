@@ -1,10 +1,11 @@
 ## Previous requirements
 - installing git ( on cmd try ```git``` to check if installed)
-    On mac OS > [installer](https://sourceforge.net/projects/git-osx-installer/)
-    Other alternatives such as homebrew see [git website](https://git-scm.com/downloads/mac)
+    Download homebrew > [link](https://brew.sh/)
+    Might get some time to install
 
 - installing node js ( on cmd try ```node -v``` to check if installed)
     [Node js](https://nodejs.org/en/download)
+    Get Node.js v22.14.0 (LTS) for macOS using nvm with npm
 
 - installing openssl ( on cmd try ```openssl``` to check if installed)
 
