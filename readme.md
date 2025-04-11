@@ -4,9 +4,6 @@
 Download homebrew > [link](https://brew.sh/)
 Might get some time to install
 
-Then
-``` brew upgrade ```
-
 ```brew install git```
 
 ### install node.js 
