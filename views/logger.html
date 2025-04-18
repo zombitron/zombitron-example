@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logger</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="/zombitron/client/zombiterface.js"></script>
+    <script type="text/javascript">
+        window.addEventListener('connection', function (event) {
+            console.log("connection de " + event.detail);
+        });
+        window.addEventListener('disconnection', function (event) {
+            console.log("deconnection de " +event.detail);
+        });
+        window.addEventListener('/demo/x', function (event) {
+            console.log('/demo/x :' + event.detail);
+        });
+        window.addEventListener('/demo/y', function (event) {
+            console.log('/demo/y :' + event.detail);
+        });
+        window.addEventListener('/demo/button1', function (event) {
+            console.log('/demo/button1 :' + event.detail);
+        });
+        window.addEventListener('/demo/button2', function (event) {
+            console.log('/demo/button2 :' + event.detail);
+        });
+        window.addEventListener('/demo/slider1', function (event) {
+            console.log('/demo/slider1 :' + event.detail);
+        });
+        window.addEventListener('/demo/slider2', function (event) {
+            console.log('/demo/slider2 :' + event.detail);
+        });
+    </script>
+    <style>
+        body {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgb(133, 253, 201);
+        }
+    </style>
+</body>
+
+</html>

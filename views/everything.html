@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" type = "text/css" href = "/assets/css/style.css">
+    <title>Everything</title>
+</head>
+
+<body data-zombitron='{
+        "name": "demo",
+        "orientation": {
+            "alpha": "/demo/alpha",
+            "beta": "/demo/beta",
+            "gamma": "/demo/gamma"
+        },
+        "acceleration": {
+            "x": "/demo/acceleration_x",
+            "y": "/demo/acceleration_y",
+            "z": "/demo/acceleration_z"
+        } 
+    }'>
+
+    <div id='XY' data-zombitron='{
+        "type": "sliderxy",
+        "x": "/demo/x",
+        "y": "/demo/y",
+        "cursor" : true
+    }'>
+    </div>
+
+    <div id='button1' data-zombitron='{
+        "type": "button",
+        "toggle": true,
+        "value": "/demo/button1"
+    }'></div>
+
+    <div id='button2' data-zombitron='{
+        "type": "button",
+        "toggle": false,
+        "value": "/demo/button2"
+    }'></div>
+
+    <div id='slider2' data-zombitron='{
+        "type": "slider",
+        "orientation" : "horizontal",
+        "value": "/demo/slider1",
+        "response" : "absolute"
+    }'></div>
+
+    <div id='slider1' data-zombitron='{
+        "type": "slider",
+        "orientation" : "vertical",
+        "value": "/demo/slider2",
+        "cursor" : false
+    }'></div>
+    
+    <script type="text/javascript" src="/zombitron/client/zombiterface.js"></script>
+
+    <style>
+        #XY {
+            top: 10px;
+            left: 10px;
+        }
+
+        #button1 {
+            top: 100px;
+            left: 250px;
+        }
+
+        #button2 {
+            top: 100px;
+            left: 300px;
+        }
+
+        #slider1 {
+            top: 10px;
+            left: 390px;
+        }
+
+        #slider2 {
+            top: 220px;
+            left: 10px;
+        }  
+    </style>
+</body>
+
+</html>

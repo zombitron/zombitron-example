@@ -1,0 +1,65 @@
+/* Default style can be customized */
+
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+.zombitronelem {
+    position: absolute;
+    overflow: hidden;
+}
+
+.cursor {
+    position: relative;    
+}
+
+/* Elements default sizes */
+.sliderxy {
+    width: 200px;
+    height: 200px;
+}
+
+.button {
+    width: 40px;
+    height: 40px;
+}
+
+.slider.vertical {
+    width: 40px;
+    height: 200px;
+}
+
+.slider.horizontal {
+    width: 200px;
+    height: 40px;
+} 
+
+.cursor {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+}
+
+/* Elements default colors */
+.zombitronelem {
+    background-color: hsl(0, 95%, 84%);
+    border: 2px solid black;
+}
+
+.cursor {
+    background-color: aqua;
+}
+
+.progress {
+    background-color: aqua;
+}
+
+.button .on {
+    background-color: aqua;
+}
