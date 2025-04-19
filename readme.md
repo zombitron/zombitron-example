@@ -39,31 +39,7 @@ Either you download the code in zip, either (if you downloaded git earlier) you 
 When you have the new folder, enter it in your cmd ([JIC](https://gomakethings.com/navigating-the-file-system-with-terminal/)) and hit
 ```npm install```
 
-at this stage, if you want to run on a local server, connect to local network
-
-### Secure Context
-if you want to run on a secure context (which you want if you need IMU sensors and use not super old phones),
-You will need to activate https and to generate certificaes (certificates are mandatory for IOS devices < IOS13) 
-```
-npm run set-https true
-```
-
-or
-```
-npm run set-https false // if your want to deactivate it
-``` 
-Create a certificate
-```
-npm run makecerts
-```
-
-NB: if you installed git, it cames with openssl which you need at this stage, but if you dit not install git, you need to install openssl now. 
-(https://openssl.org/)
-
-### Enabling OSC  (optional)
-```
-node set-osc [yourip] [theOSCport]
-```
+at this stage, you should will be asked a few information for setup: 
 
 ### Start stop the Zombitron
 Then you can run 
@@ -75,7 +51,7 @@ to start
 and ``` control + c ``` to stop 
 
 ## ON SMARTPHONE OR TABLET 
-The cmd line should display the avalaible interfaces you can connect you devices to :)
+The cmd line should display the avalable interfaces you can connect you devices to :)
 
 ## IOS < 13 
 On IOS < 13 you need to install the certificate
@@ -85,3 +61,23 @@ Go to https://[YOUR-LOCAL-IP]:[port]/certificate
 Accept 
 
 Then settings > general > install certificate
+
+
+
+## Options
+### Secure Context
+if you want to run on a secure context (which you want if you need IMU sensors and use not super old phones),
+You will need to activate https and to generate certificates (certificates are mandatory for IOS devices < IOS13) 
+```
+npm run setsecureserver
+```
+
+Whenever you change your ip address, you will need to regenerate the certificates.
+
+NB: if you installed git, it cames with openssl which you need at this stage, but if you dit not install git, you need to install openssl now. 
+(https://openssl.org/)
+
+### Enabling OSC  (optional)
+```
+npm run set-osc
+```
