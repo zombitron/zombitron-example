@@ -1,5 +1,0 @@
-#! /usr/bin/env node
-var data = require('./setup.json');
-var fs = require('fs');
-data.https = (process.argv[2] == 'true');
-fs.writeFile('setup.json', JSON.stringify(data), function(e){});

@@ -1,62 +1,66 @@
 ## Previous requirements
+
+The following installation steps are to be done on your computer or the dedicated android phone through [Termux](https://termux.dev/en/) (more doc to come) 
+
 ### 1. install git 
-( on cmd try ```git``` to check if installed)
-Download homebrew > [link](https://brew.sh/)
+(not mendatory but convenient to get updates.)
+
+on cmd try ```git``` to check if installed
+<details>
+  <summary>Installing git on IOS </summary>
+Download homebrew > ]https://brew.sh/ if not done 
+( on command ```brew``` to test if installed )
+
 Might get some time to install
 
 ```brew install git```
+  
+</details>
 
 ### 2. install node.js 
 ( on cmd try ```node -v``` to check if installed)
-[Node js](https://nodejs.org/en/download)
 
-```
-# Download and install nvm:
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+if not : 
 
-# in lieu of restarting the shell
-\. "$HOME/.nvm/nvm.sh"
+<details>
+  <summary>Install node</summary>
+<a href="https://nodejs.org/en/download">Node installation</a>
 
-# Download and install Node.js:
-nvm install 16
-
-# Verify the Node.js version:
-node -v 
-nvm current 
-
-# Verify npm version:
-npm -v # Should print "10.9.2".
-```
+The code has been tested on node version 16 and node version 12. 
+You should at most use node 16 if you don't want to be adventurous yet.
+</details>
 
 ## SETUP SERVER
-then : on cmd
-```
-git clone --recursive https://github.com/clararigaud/zombitron-turner.git 
-cd zombitron-turner
-zombitron-turner > npm install
-```
+Then get the zombitron code: 
+
+Either you download the code in zip, either (if you downloaded git earlier) you do that on cmd
+``` git clone --recursive https://github.com/zombitron/zombitron-example.git ```
+
+When you have the new folder, enter it in your cmd ([JIC](https://gomakethings.com/navigating-the-file-system-with-terminal/)) and hit
+```npm install```
+
 at this stage, if you want to run on a local server, connect to local network
 
-then get your local ip :
-by hitting the option key while clicking on the wifi logo on the top right of the screen
-
-```
-zombitron-turner > node set-ip [YOUR-LOCAL-IP]
-```
 ### Secure Context
-if you want to run on a secure context (which you want if you need IMU sensors and use not super old phones)
+if you want to run on a secure context (which you want if you need IMU sensors and use not super old phones),
+You will need to activate https and to generate certificaes (certificates are mandatory for IOS devices < IOS13) 
 ```
-zombitron-turner > node set-https true
+npm run set-https true
 ```
 
+or
+```
+npm run set-https false // if your want to deactivate it
+``` 
 Create a certificate
 ```
-zombitron-turner > mkdir zombitron/server/certs
-zombitron-turner > openssl genrsa -out zombitron/server/certs/server.key 2048
-openssl req -new -x509 -sha256 -key  zombitron/server/certs/server.key -out  zombitron/server/certs/server.crt -days 365 -subj /CN=[YOUR-LOCAL-IP]
+npm run makecerts
 ```
 
-### Enabling OSC  (optionnal)
+NB: if you installed git, it cames with openssl which you need at this stage, but if you dit not install git, you need to install openssl now. 
+(https://openssl.org/)
+
+### Enabling OSC  (optional)
 ```
 node set-osc [yourip] [theOSCport]
 ```
@@ -64,16 +68,20 @@ node set-osc [yourip] [theOSCport]
 ### Start stop the Zombitron
 Then you can run 
 ```
-zombitron-turner > node index.js
+npm run start
 ```
 to start 
-and ``` cmd + c ``` to stop 
+
+and ``` control + c ``` to stop 
 
 ## ON SMARTPHONE OR TABLET 
-Go to http (or https)//[--YOUR_IP--]:[--YOUR PORT--]/
+The cmd line should display the avalaible interfaces you can connect you devices to :)
 
 ## IOS < 13 
-On IOS < 13 you need to install the certificate 
+On IOS < 13 you need to install the certificate
+
 Go to https://[YOUR-LOCAL-IP]:[port]/certificate
+
 Accept 
+
 Then settings > general > install certificate
