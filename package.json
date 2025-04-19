@@ -8,7 +8,9 @@
     "set-https": "node zombitron/setup/set-https",
     "get-ip": "node zombitron/setup/get-ip",
     "makecerts": "node zombitron/setup/makecerts",
-    "set-osc": "node zombitron/setup/set-osc"
+    "set-osc": "node zombitron/setup/set-osc",
+    "postinstall": "node zombitron/setup/installCLI.js",
+    "setsecureserver": "node zombitron/setup/setsecureserver.js"
   },
   "author": "Clara Rigaud",
   "license": "GNU",
