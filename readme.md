@@ -26,8 +26,7 @@ if not :
   <summary>Install node</summary>
 <a href="https://nodejs.org/en/download">Node installation</a>
 
-The code has been tested on node version 16 and node version 12. 
-You should at most use node 16 if you don't want to be adventurous yet.
+The code has been tested on node version 22.16.0 LTS and node version 12.13.0 (LTS)
 </details>
 
 ## SETUP SERVER
