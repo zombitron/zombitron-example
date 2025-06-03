@@ -7,7 +7,8 @@
     <title>Logger</title>
 </head>
 
-<body>
+<body id="container" data-zombitron='{
+        "name": "logger"}'>
     <script type="text/javascript" src="/zombitron/client/zombiterface.js"></script>
     <script type="text/javascript">
         window.addEventListener('connection', function (event) {
@@ -17,22 +18,28 @@
             console.log("deconnection de " +event.detail);
         });
         window.addEventListener('/demo/x', function (event) {
-            console.log('/demo/x :' + event.detail);
+            console.log(event.type, event.detail);
         });
         window.addEventListener('/demo/y', function (event) {
-            console.log('/demo/y :' + event.detail);
+            console.log(event.type, event.detail);
         });
         window.addEventListener('/demo/button1', function (event) {
-            console.log('/demo/button1 :' + event.detail);
+            console.log(event.type, event.detail);
         });
         window.addEventListener('/demo/button2', function (event) {
-            console.log('/demo/button2 :' + event.detail);
+            console.log(event.type, event.detail);
         });
         window.addEventListener('/demo/slider1', function (event) {
-            console.log('/demo/slider1 :' + event.detail);
+            console.log(event.type, event.detail);
         });
         window.addEventListener('/demo/slider2', function (event) {
-            console.log('/demo/slider2 :' + event.detail);
+            console.log(event.type, event.detail);
+        });
+        window.addEventListener('/demo/slider11', function (event) {
+            console.log(event.type, event.detail);
+        });
+        window.addEventListener('/demo/slider21', function (event) {
+            console.log(event.type, event.detail);
         });
     </script>
     <style>

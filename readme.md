@@ -51,7 +51,7 @@ to start
 and ``` control + c ``` to stop 
 
 ## ON SMARTPHONE OR TABLET 
-The cmd line should display the avalable interfaces you can connect you devices to :)
+The cmd line should display the avalaible interfaces you can connect you devices to :)
 
 ## IOS < 13 
 On IOS < 13 you need to install the certificate
@@ -62,7 +62,8 @@ Accept
 
 Then settings > general > install certificate
 
-
+Then settings > general > information > Certificate setup
+and tick the one(s) corresponding tio your IP
 
 ## Options
 ### Secure Context

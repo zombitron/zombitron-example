@@ -13,7 +13,7 @@
     "setsecureserver": "node zombitron/setup/setsecureserver.js"
   },
   "author": "Clara Rigaud",
-  "license": "GNU",
+  "license": "AGPL-3.0-only",
   "dependencies": {
     "express": "^4.19.2",
     "osc-js": "^2.4.1"
