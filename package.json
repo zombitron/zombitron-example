@@ -16,6 +16,7 @@
   "license": "AGPL-3.0-only",
   "dependencies": {
     "express": "^4.19.2",
-    "osc-js": "^2.4.1"
+    "osc-js": "^2.4.1",
+    "tone": "^13.8.25"
   }
 }

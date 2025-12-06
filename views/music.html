@@ -17,20 +17,34 @@
         window.addEventListener('disconnection', function (event) {
             console.log("deconnection de " +event.detail);
         });
+        let pitchx = 0;
         window.addEventListener('/demo/x', function (event) {
-            console.log(event.type, event.detail);
+            pitchx = parseFloat(event.detail) * 100 + 100;
+            console.log(pitchx)
+           window.musiccontroller.custominstr[0].triggerAttackRelease(pitchx, "8n");
+           
         });
-        window.addEventListener('/demo/y', function (event) {
-            console.log(event.type, event.detail);
+        let pitchy = 0;
+
+        window.addEventListener('funkySensorESP1', function (event) {
+            pitchy = parseFloat(event.detail) * 100 + 100;
+            window.musiccontroller.custominstr[1].triggerAttackRelease(pitchy, "8n");
         });
+        
         window.addEventListener('/demo/button1', function (event) {
-            console.log(event.type, event.detail);
+            window.musiccontroller.seqInstruments[0].instrument.start();
         });
         window.addEventListener('/demo/button2', function (event) {
             console.log(event.type, event.detail);
+            window.musiccontroller.seqInstruments[1].instrument.start();
         });
+
+        window.addEventListener('funkySensorESP1', function (event) {
+            // window.musiccontroller.custominstr[4].start()
+        });
+
         window.addEventListener('/demo/slider1', function (event) {
-            console.log(event.type, event.detail);
+            
         });
         window.addEventListener('/demo/slider2', function (event) {
             console.log(event.type, event.detail);
@@ -38,13 +52,6 @@
         window.addEventListener('/demo/slider11', function (event) {
             console.log(event.type, event.detail);
         });
-        window.addEventListener('/demo/slider21', function (event) {
-            console.log(event.type, event.detail);
-        });
-        window.addEventListener('/demo/alpha', function (event) {
-            console.log(event.type, event.detail);
-        });
-
     </script>
     <style>
         body {
@@ -56,6 +63,7 @@
             background-color: rgb(133, 253, 201);
         }
     </style>
+    <script type="module" src="/assets/js/app/main.js"></script>
 </body>
 
 </html>
