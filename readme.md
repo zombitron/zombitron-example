@@ -5,6 +5,7 @@ The following installation steps are to be done on your computer or the dedicate
 ### 1. install git 
 (not mendatory but convenient to get updates.)
 
+> termux : pkg install git
 on cmd try ```git``` to check if installed
 <details>
   <summary>Installing git on IOS </summary>
@@ -21,7 +22,7 @@ Might get some time to install
 ( on cmd try ```node -v``` to check if installed)
 
 if not : 
-
+pkg install nodejs
 <details>
   <summary>Install node</summary>
 <a href="https://nodejs.org/en/download">Node installation</a>
