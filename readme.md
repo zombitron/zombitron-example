@@ -5,10 +5,15 @@ The following installation steps are to be done on your computer or the dedicate
 ### 1. install git 
 (not mendatory but convenient to get updates.)
 
-> termux : pkg install git
 on cmd try ```git``` to check if installed
+
+On termux : ```pkg install git```
+
+To run secure server, you need open-ssl.  
+On termux : ```pkg install openssl-tool```
+
 <details>
-  <summary>Installing git on IOS </summary>
+  <summary>Installing git on MacOS </summary>
 Download homebrew > ]https://brew.sh/ if not done 
 ( on command ```brew``` to test if installed )
 
@@ -19,12 +24,15 @@ Might get some time to install
 </details>
 
 ### 2. install node.js 
+
+(tested on node 22lts )
 ( on cmd try ```node -v``` to check if installed)
 
 if not : 
-pkg install nodejs
+On termux : ```pkg install nodejs-lts```
+
 <details>
-  <summary>Install node</summary>
+  <summary>Install node otherwise</summary>
 <a href="https://nodejs.org/en/download">Node installation</a>
 
 The code has been tested on node version 22.16.0 LTS and node version 12.13.0 (LTS)
@@ -39,7 +47,7 @@ Either you download the code in zip, either (if you downloaded git earlier) you 
 When you have the new folder, enter it in your cmd ([JIC](https://gomakethings.com/navigating-the-file-system-with-terminal/)) and hit
 ```npm install```
 
-at this stage, you should will be asked a few information for setup: 
+at this stage, you will be asked a few information for setup: 
 
 ### Start stop the Zombitron
 Then you can run 
@@ -51,7 +59,7 @@ to start
 and ``` control + c ``` to stop 
 
 ## ON SMARTPHONE OR TABLET 
-The cmd line should display the avalaible interfaces you can connect you devices to :)
+The cmd line should display the available interfaces you can connect you devices to :)
 
 ## IOS < 13 
 On IOS < 13 you need to install the certificate

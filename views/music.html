@@ -7,51 +7,68 @@
     <title>Logger</title>
 </head>
 
-<body id="container" data-zombitron='{
-        "name": "logger"}'>
+<body id="container" data-zombitron='{"name": "musicplayer"}'>
     <script type="text/javascript" src="/zombitron/client/zombiterface.js"></script>
+
     <script type="text/javascript">
         window.addEventListener('connection', function (event) {
             console.log("connection de " + event.detail);
         });
         window.addEventListener('disconnection', function (event) {
-            console.log("deconnection de " +event.detail);
+            console.log("deconnection de " + event.detail);
         });
+
         let pitchx = 0;
         window.addEventListener('/demo/x', function (event) {
             pitchx = parseFloat(event.detail) * 100 + 100;
             console.log(pitchx)
-           window.musiccontroller.custominstr[0].triggerAttackRelease(pitchx, "8n");
-           
+            window.musiccontroller.custominstr[0].triggerAttackRelease(pitchx, "8n");
         });
-        let pitchy = 0;
 
-        window.addEventListener('funkySensorESP1', function (event) {
-            pitchy = parseFloat(event.detail) * 100 + 100;
+        let pitchy = 0;
+        window.addEventListener('/demo/y', function (event) {
+            pitchy = parseFloat(event.detail) * 200 + 100;
             window.musiccontroller.custominstr[1].triggerAttackRelease(pitchy, "8n");
+            window.musiccontroller.custominstr[1].volume.value = -10
+            console.log(event.detail)
         });
-        
+
+        let note = 250;
+        window.addEventListener('touchVal', function (event) {
+            console.log(event.type, event.detail);
+            if (event.detail > 0) {
+                window.musiccontroller.custominstr[1].triggerAttack(note, "8n");
+            } else {
+                window.musiccontroller.custominstr[1].triggerRelease()
+            }
+        });
+
         window.addEventListener('/demo/button1', function (event) {
-            window.musiccontroller.seqInstruments[0].instrument.start();
+            console.log(event.detail)
+            if (event.detail == true) {
+                window.musiccontroller.custominstr[4].start();
+            }
+            else {
+                window.musiccontroller.custominstr[4].stop();
+            }
         });
+
         window.addEventListener('/demo/button2', function (event) {
             console.log(event.type, event.detail);
-            window.musiccontroller.seqInstruments[1].instrument.start();
+            window.musiccontroller.custominstr[5].start();
         });
 
-        window.addEventListener('funkySensorESP1', function (event) {
-            // window.musiccontroller.custominstr[4].start()
-        });
-
+        let note2 = 250;
         window.addEventListener('/demo/slider1', function (event) {
-            
+            // window.musiccontroller.custominstr[7].triggerAttack(note2, "8n");
         });
-        window.addEventListener('/demo/slider2', function (event) {
+
+        window.addEventListener('/demo/alpha', function (event) {
+            note2 = (event.detail + 1) * 100 + 200;
             console.log(event.type, event.detail);
+             window.musiccontroller.custominstr[7].triggerAttackRelease(note2, "8n");
         });
-        window.addEventListener('/demo/slider11', function (event) {
-            console.log(event.type, event.detail);
-        });
+
     </script>
     <style>
         body {

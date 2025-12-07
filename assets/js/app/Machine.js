@@ -7,9 +7,18 @@ export default class Machine {
         this.custominstr[1] =  new Tone.Synth().toMaster();
         this.custominstr[2] =  new Tone.Synth().toMaster();
         this.custominstr[3] =  new Tone.Synth().toMaster();
+
         this.custominstr[4] =  new Tone.Player ( "/assets/js/app/instruments/kickoo.wav" , ).toMaster();
-        this.custominstr[5] =  new Tone.Synth().toMaster();
-        this.custominstr[6] =  new Tone.Synth().toMaster();
+        this.custominstr[4].loop = true
+        
+        this.custominstr[5] =  new Tone.Player ( "/assets/js/app/instruments/clap.wav" , ).toMaster();
+        this.custominstr[6] =  new Tone.Player ( "/assets/js/app/instruments/konck.wav" , ).toMaster();
+        
+        
+        
+        this.feedbackDelay = new Tone.FeedbackDelay("8n", 0.5).toMaster();
+        this.custominstr[7] =  new Tone.MembraneSynth().chain(this.feedbackDelay);
+        this.custominstr[7].volume.value = -5
 
         this.options = {
             bpm: {
